@@ -25,7 +25,7 @@ class ICNet(Network):
             self.img_placeholder = tf.placeholder(dtype=tf.float32, shape=cfg.INFER_SIZE)
             self.images, self.o_shape, self.n_shape = _infer_preprocess(self.img_placeholder)
             
-            super().__init__(inputs={'data': self.images}, cfg=self.cfg)
+            super(ICNet,self).__init__(inputs={'data': self.images}, cfg=self.cfg)
 
             self.output = self.get_output_node()
 
